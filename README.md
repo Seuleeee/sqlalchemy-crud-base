@@ -68,7 +68,8 @@ class ExampleModel(Base):
 
 ### 3. Using crudalchemy for CRUD
 
-By following a few simple steps, you can use the SQLAlchemy model you've defined to perform basic CRUD operations:
+By following a few simple steps, you can use the SQLAlchemy model you've defined to perform basic CRUD operations:  
+
 0. Install crudalchemy packages
     ```shell
     pip install git+https://github.com/Seuleeee/sqlalchemy-crud-base
