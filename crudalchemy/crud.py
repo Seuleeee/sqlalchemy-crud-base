@@ -38,7 +38,7 @@ class CRUDBase(Generic[T]):
         db.add(db_obj)
         db.commit()
         db.refresh(db_obj)
-        return db_obj
+        return obj_in
 
     def remove(self, db: Session, id: int) -> T:
         obj = db.query(self.model).get(id)
