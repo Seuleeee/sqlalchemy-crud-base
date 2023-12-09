@@ -147,6 +147,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any inquiries or suggestions, please feel free to contact me at [your_email@example.com](mailto:bryantjo1224@gmail.com).
+For any inquiries or suggestions, please feel free to contact me at [bryantjo1224@gmail.com](mailto:bryantjo1224@gmail.com).
 
 
