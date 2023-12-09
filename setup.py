@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name="crudalchemy",
     version="0.1.0",
-    author="Your Name",
+    author="HanSeul Jo",
+    author_email="bryantjo1224@gmail.com",
     description="A SQLAlchemy-based CRUD package",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
