@@ -10,12 +10,27 @@ Please import it into your project. By defining only the database connection inf
 ## Environment Setup
 
 Before running the project, create a `.env` file and set the following environment variables:
-These settings are used to connect to the PostgreSQL database.
-> :warning: **Currently, only PostgreSQL is supported. Implementation for additional databases like MySQL, MariaDB, etc., is planned for the future. (However, the exact timeline is uncertain...)**
+These settings are used to connect to the PostgreSQL/MySQL/MariaDB database.
+
+### Usage Instructions
+
+Before using, make sure to install the 'python-dotenv' package. You can set the environment variables as follows:
+
+```python
+from dotenv import load_dotenv
+
+# Load environment variables from the specified file
+load_dotenv(dotenv_path='.env')
 ```
-DATABASE_PORT=5432
-POSTGRES_PASSWORD=password
-POSTGRES_USER=postgres
-POSTGRES_DB=postgres
-POSTGRES_HOST=127.0.0.1
+
+#### .env file
+```
+# DB_TYPE=postgresql+psycopg2
+# DB_TYPE=mysql+pymysql
+DB_TYPE=postgresql
+DB_NAME={database name}
+DB_USER={user name}
+DB_PASSWORD={password}
+DB_HOST={host ip adress}
+DB_PORT={host port number}
 ```
