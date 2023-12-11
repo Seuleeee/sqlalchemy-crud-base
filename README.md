@@ -80,64 +80,65 @@ By following a few simple steps, you can use the SQLAlchemy model you've defined
 3. Apply CRUD operations
 
 #### example.py
-```python
+#### 1. Create a CRUD object
 
+```python
 from crudalchemy.config.connect import get_db
 from crudalchemy.crud import CRUDBase
 
 from .models import ExampleModel
-
 
 # 1. Get a DB session
 db = get_db()
 
 # 2. Create a CRUD object
 example_crud = CRUDBase(ExampleModel)
+```
 
-# 3. Create a CRUD object
-# 1) Create
+#### 2. Create
+
+```python
 # Dummy Data
 create_schema = {
-    "question": "What's your favorite?",
-    "answer": "BasketBall",
+   "question": "What's your favorite?",
+   "answer": "BasketBall",
 }
 create_record = ExampleModel(**create_schema)
 created_model = example_crud.create(db, create_record)
-print("Created Record:")
-print(f"ID: {created_model.id} \n"
-      f"Question: {created_model.question} \n"
-      f"Answer :{created_model.answer} \n"
-      f"TimeStamp: {created_model.timestamp}")
+```
 
-# 2) Read Single Object
-single_model = example_crud.get(db, created_model.id)
-print(f"Read Single Model!! {single_model}")
+#### 3. Read
+* Single Object
+   ```python
+   single_model = example_crud.get(db, created_model.id)
+   ```
+* Multiple Objectg
+   ```python
+   multiple_model = example_crud.get_multi(db)
+   ```
 
-# 3) Read Multiple Object
-multiple_model = example_crud.get_multi(db)
-print(f"Read Multiple Model!! {multiple_model}")
+#### 4. Update
 
-# 4) Update
+```python
 # Dummy Data
 update_schema = {
-    "question": "What's your favorite programming language?",
-    "answer": "Python!!!"
+   "question": "What's your favorite programming language?",
+   "answer": "Python!!!"
 }
 update_record = ExampleModel(**update_schema)
 updated_model = example_crud.update(db, created_model, update_record)
-print("Updated Record:")
-print(f"ID: {updated_model.id} \n"
-      f"Question: {updated_model.question} \n"
-      f"Answer :{updated_model.answer} \n"
-      f"TimeStamp: {updated_model.timestamp}")
+```
 
-# 5) Delete
+#### 5. Delete
+```pytghon
 delete_record_id = updated_model.id
 deleted_record = example_crud.remove(db, delete_record_id)
-print("Deleted Record:")
-print(f"ID: {deleted_record.id}, Question: {deleted_record.question}, Answer: {deleted_record.answer}")
+```
 
-# 4. Connection Close
+
+#### 6. Connection Close
+
+```python
 db.close()
 ```
 
