@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="crudalchemy",
-    version="0.1.1",
+    name="sqlalchemy-crud-base",
+    version="0.1.2",
     author="HanSeul Jo",
     author_email="bryantjo1224@gmail.com",
     description="A SQLAlchemy-based CRUD package",

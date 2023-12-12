@@ -1,4 +1,4 @@
-from alchemycrud.config.session import SessionLocal
+from crudalchemy.config.session import SessionLocal
 
 
 def get_db():
