@@ -23,6 +23,13 @@ class CRUDBase(Generic[T]):
 
     # TODO: pk를 어떻게 불러올 것인지?
     def get(self, db: Session, pk: int) -> T:
+        """
+        If you want to serialize an SQLAlchemy model object,
+        use the serialze module from crudalchemy.util.
+
+        from crudalchemy.util import serialize
+        Usage: serialize(Model).
+        """
         return db.query(self.model).filter(self.model.id == pk).first()
 
     def get_multi(self, db: Session, skip: int = 0, limit: int = 100) -> list[T]:
